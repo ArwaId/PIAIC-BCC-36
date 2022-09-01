@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        Play With the Colors List
+    </head>
+    <body>
+        <p><i><b>Initial List of Colors </b></i></p>
+        <p id="color"></p>
+        <p><i><b>Added a Color at the beginning</b></i></p>
+        <p id="a"></p>
+        <p><i><b>Added a Color at the End of the List</b></i></p>
+        <p id="b"></p>
+        <p><i><b>Added two Colors at the beginning</b></i></p>
+        <p id="c"></p>
+        <p><i><b>Final List of Colors </b></i>  
+        <p id="finalcolor"></p>
+        <p><b>Deleting First color from the List</b></p>
+        <p id="first"></p>
+        <p><b>Deleting Last color from the List</b></p>
+        <p id="last"></p>
+        <p><b>Added a color in between the list</b></p>
+        <p id="between"></p>
+        <p><b>Deleted a color in between the list</b></p>
+        <p id="betweendel"></p>
+        
+        <script >
+            var colorList=["purple","Pink"]
+            document.getElementById("color").innerText=colorList;
+
+            var name = prompt("Add a Color at the beginning: ");
+            colorList.unshift(name);
+            document.getElementById("a").innerText=colorList;
+            alert("Added a color at the beginning " + colorList);
+
+            var name = prompt("Add a Color at the End of the List: ");
+            colorList.push(name);
+            document.getElementById("b").innerText=colorList;
+            alert("Added a color at the end " + colorList);
+
+            var name = prompt("Add two Color at the beginning enter second colour after a space: ");
+            var bothColors = name.split(" ")
+            colorList.unshift(bothColors[1]);
+            colorList.unshift(bothColors[0]);
+            document.getElementById("c").innerText=colorList;
+            alert("Added 2 colors at the beginning "+ colorList);
+
+            document.getElementById("finalcolor").innerText=colorList;
+            alert("Final color list " +colorList);
+            
+            colorList.shift();
+            document.getElementById("first").innerText=colorList;
+            alert("Removed first Color from list " +colorList);
+            
+            colorList.pop();
+            document.getElementById("last").innerText=colorList;
+            alert("Removed Last Color from list " +colorList);
+
+            var indexname = prompt("At which index starting from 0 would you like to add a color : ");
+            var name = prompt("Enter The name name of the colour : ");
+            colorList.splice(indexname,0,name);
+            document.getElementById("between").innerText=colorList;
+            alert("Added a color at index " + indexname+"in the list "+colorList);
+
+            var indexname = prompt("At which index starting from 0 would you like to delete a color : ");
+            var quan = prompt("How many colors would you like to delete");
+            
+            colorList.splice(indexname,quan);
+            document.getElementById("betweendel").innerText=colorList;
+            alert("Deleted " +quan+ " color at index " + indexname +"from the list "+colorList);
+
+
+
+        </script>
+    </body>
+</html>
