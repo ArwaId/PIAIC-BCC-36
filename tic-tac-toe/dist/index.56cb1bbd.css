@@ -1,0 +1,119 @@
+body {
+  font-family: Gloria Hallelujah, cursive;
+}
+
+h1 {
+  text-align: center;
+}
+
+.game-container {
+  cursor: pointer;
+  grid-template-columns: 75px 75px 75px;
+  justify-content: center;
+  gap: 20px;
+  display: grid;
+}
+
+.button {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.winner {
+  display: hidden;
+}
+
+.box {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  animation: mymove 15s infinite alternate;
+  box-shadow: 5px 5px 5px #000;
+}
+
+@keyframes mymove {
+  0% {
+    background-color: red;
+  }
+
+  14% {
+    background-color: orange;
+  }
+
+  28% {
+    background-color: #ff0;
+  }
+
+  42% {
+    background-color: green;
+  }
+
+  66% {
+    background-color: #00f;
+  }
+
+  82% {
+    background-color: indigo;
+  }
+
+  92% {
+    background-color: violet;
+  }
+}
+
+.x {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.y {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  background-color: #f0f;
+  font-size: 40px;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px #000;
+}
+
+.button-container {
+  justify-content: center;
+  display: flex;
+}
+
+.input {
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.input:hover {
+  outline: none;
+}
+
+.wave {
+  border-radius: 40px 0;
+  transition: all .4s;
+}
+
+.waveB {
+  color: red;
+  background-color: #ffd5d5;
+  border: 2px solid #ff6f6f;
+  box-shadow: 2px 2px 2px 1px #64202033;
+}
+
+.waveB:hover {
+  border: 3px solid #ff2a2a;
+  box-shadow: 12px 12px 2px 1px #64202033;
+}
+
+/*# sourceMappingURL=index.56cb1bbd.css.map */

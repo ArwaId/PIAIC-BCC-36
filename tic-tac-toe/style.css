@@ -1,0 +1,119 @@
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1 {
+    text-align: center;
+
+}
+.game-container {
+    /*
+    display: flex;
+    justify-content: center;
+    align-items: center;*/
+    display: grid;
+    grid-template-columns: 75px 75px 75px;
+    gap: 20px;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.button {
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.winner {
+    display: hidden;
+    
+}
+
+
+.box {
+    width : 75px;
+    height : 75px;
+    animation: mymove 15s infinite alternate;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    box-shadow: 5px 5px 5px black;
+
+}
+@keyframes mymove {
+    0% {
+        background-color: red;
+    }
+    14% {
+        background-color: orange;
+    }
+    28% {
+        background-color: yellow;
+    }
+    42% {
+        background-color: green;
+    }
+    66% {
+        background-color: blue;
+    }
+    82% {
+        background-color:indigo ;
+    }
+    92% {
+        background-color: violet;
+    }
+    
+    
+}
+.x {
+    width : 75px;
+    height : 75px;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    box-shadow: 5px 5px 5px black;
+
+}
+.y {
+    width : 75px;
+    height : 75px;
+    background-color: magenta;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    box-shadow: 5px 5px 5px black;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+/*button styling */
+.input {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.input:hover {
+    outline: none;
+}
+.wave {
+    border-radius: 40px 0 40px 0;
+    transition: 0.4s ease;
+}
+.waveB {
+    background-color: rgb(255, 213, 213);
+    color: rgb(255, 0, 0);
+    border: 2px solid rgb(255, 111, 111);
+    box-shadow: 2px 2px 2px 1px rgba(100, 32, 32, 0.2);
+}
+.waveB:hover {
+    border: 3px solid rgb(255, 42, 42);
+    box-shadow: 12px 12px 2px 1px rgba(100, 32, 32, 0.2);
+}
