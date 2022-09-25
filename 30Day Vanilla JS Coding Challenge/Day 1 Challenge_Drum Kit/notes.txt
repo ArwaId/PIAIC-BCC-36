@@ -1,3 +1,0 @@
-https://www.toptal.com/developers/keycode/for/arrow-up
-
-* the site gives keycodes for the keys on keyboard
