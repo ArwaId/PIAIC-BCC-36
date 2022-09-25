@@ -1,0 +1,12 @@
+https://www.toptal.com/developers/keycode/for/arrow-up
+
+* the site gives keycodes for the keys on keyboard
+
+The <kbd> tag is used to define keyboard input. 
+The content inside is displayed in the browser's default monospace font
+ and uses CSS too.
+The WAV files are uncompressed and remain in good quality as compared to MP3.
+element.addEventListener(event, function, useCapture/bubbling) and 
+removeEventLstener() makes use of 2 Events in the project
+1) transitionend Event occurs when CSS transition ends 
+2) Keydown event is fired for all keys indicating which key is pressed and generates its keyCode.
