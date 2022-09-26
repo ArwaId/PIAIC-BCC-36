@@ -1,0 +1,29 @@
+.inbox, h1 {
+    background: linear-gradient(to right,rgba(36, 29, 228, 0.171),
+    rgb(247, 167, 102), rgb(110, 235, 197));
+    
+    text-align: from left;
+    box-shadow: 15px 15px 0 rgba(51, 40, 40, 0.3);
+
+}
+input:checked + p {
+    text-decoration: line-through;
+}
+input[type="checkbox"] {
+    margin: 20px;
+}
+.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #1eeee4;;
+}
+p {
+    margin:0;
+    padding:20px;
+    transition:background 0.2s;
+    flex:1;
+    font-family:'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+    border-left: 2px solid #1eeee4;
+  }
