@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 Must know DEV tools</title>
+</head>
+<body>
+    <p onclick="makeGreen()">BREAKXDOWN</p>
+    <h1>The Image below is the Snip of Console</h1>
+    <img  src="InspectCapture.JPG">
+    
+
+    <script>
+        const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+        const p = document.querySelector('p');
+        p.style.color = '#BADA55';
+        p.style.fontSize= '30px';
+    
+    
+    //regular
+    console.log('hello');
+
+    //interpolated
+    console.log('hello i am a %s','student');
+
+    //styled
+    console.log("%cHello i am some great text","font-Size:50px;background:red;text-shadow:10px 10px 0 green");
+
+    //warning
+    console.warn('ohhh NOOOO');
+
+    //info
+console.info('What goes around comes around');
+
+// testing
+//console.assert(1===1,'This is worng!');
+const g = document.querySelector('p');
+console.assert(g.classList.contains('ouch'),'That is wrong!');
+
+//clearing
+//console.clear();
+
+
+
+//viewing dom element
+console.log(p);
+console.dir(p);
+
+//grouping together
+dogs.forEach(d => {
+    console.groupCollapsed(`${d.name}`)
+    console.log(`This is ${d.name}`);
+    console.log(`The ${d.name} is ${d.age} years old`);
+    console.groupEnd(`${d.name}`);
+})
+//counting
+console.count('wes');
+console.count('wes');
+console.count('steve');
+console.count('wes');
+console.count('steve');
+console.count('steve');
+console.count('steve');
+console.count('steve');
+
+//timing
+console.time('fetching data');
+fetch('https://api.github.com/users/webos')
+.then(data =>data.json())
+.then(data => {
+    console.timeEnd('fetching data')
+    console.log(data);
+});
+
+//table
+console.table(dogs);
+
+
+
+
+ </Script>
+</body>
+</html>
