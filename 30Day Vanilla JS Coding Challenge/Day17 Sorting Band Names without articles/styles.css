@@ -1,0 +1,39 @@
+
+#bands {
+    background: url(sunset.jpg) right bottom repeat;
+            
+  padding: 15px;
+  color: white;
+  font-size: 35px;
+}
+h1{
+    color: white;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: mymove 15s infinite alternate;
+
+}
+@keyframes mymove {
+0% {
+background-color: rgb(185, 128, 128);
+}
+14% {
+background-color: rgb(212, 105, 189);
+}
+28% {
+background-color: rgb(230, 130, 49);
+}
+42% {
+background-color: rgb(240, 236, 21);
+}
+66% {
+background-color: rgb(230, 21, 21);
+}
+82% {
+background-color:rgb(25, 23, 124) ;
+}
+92% {
+background-color: rgb(20, 3, 20);
+}
+
+}
