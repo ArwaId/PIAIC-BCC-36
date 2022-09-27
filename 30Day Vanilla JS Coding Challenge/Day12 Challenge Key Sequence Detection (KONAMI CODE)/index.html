@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+    <title>Key Sequence</title>
+    <style>
+        h1 ,h2 {
+            color: rgb(150, 35, 196);
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Secret Code is <i>"arwa"</i></h1>
+    <h2>Type the Secret code to see the Amazing Cornify</h2>
+    <script>
+        const pressed = [];
+        const secretcode = 'arwa';
+
+       
+        window.addEventListener('keyup',(e) =>{
+        console.log(e.key);
+        pressed.push(e.key);
+        console.log(pressed,secretcode.length,pressed.length);
+        pressed.splice(-secretcode.length-1,pressed.length-secretcode.length);
+
+        if(pressed.join('').includes(secretcode)){
+            console.log("Hey you did it!!")
+            cornify_add();
+
+        }
+
+        }
+        );
+    </script>
+</body>
+</html>
