@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference vs Copy</title>
+
+    <style>
+    body {
+        height: 200px;
+  background-color: rgb(233, 105, 105); /* For browsers that do not support gradients */
+  background-image: repeating-linear-gradient(45deg,white,rgb(220, 220, 235) 7%,rgb(198, 228, 198) 10%);
+    font-size: 20px;
+    
+}
+h1,h2,h3 {
+    text-align: center;
+}
+
+</style>
+
+
+</head>
+<body>
+    <h1>Inspect the page for the results</h1><br>
+    <h2>They can be seen on Console </h2><br>
+    <h3>My Learning</h3>
+   
+    <table >
+        <th>Objects and Arrays - Reference VS Copy</th>
+        <tr>
+            <td><hl>In case of number and string variables , we copy them by value and not by reference</hl></td>
+        </tr>
+        <tr>
+            <td><hl>When arrays are copied , they are done so with reference</hl></td>
+        </tr>
+        <tr>
+            <td><hl>They can be copied with assignment operator</hl></td>
+        </tr>
+        <tr>
+            <td><hl>Array can be copied without referencing it with help of Slice,spread operator and Array.from- as they all make a complete new array and doesnt alter the original one</hl></td>
+        </tr>
+        <tr>
+            <td><hl>Objects are also copied and to do so without referencing it we use object.assign and also with JSON.parse(JSON.stringify())</hl></td>
+        </tr>
+     </table>
+    <script>
+let age=100;
+let age2 =age;
+console.log(age,age2);
+age=200;
+console.log(age,age2);
+
+
+let name = 'arwa';
+let name2 = 'idris';
+console.log(name,name2);
+name = 'hassan'
+console.log(name,name2);
+// array was refernced , its a copy with reference
+const players = ['arwa','idris','batul','hassan'];
+const copy = players;
+console.log(players,copy);
+// copy[0] ='painter';
+// console.log(players,copy);
+
+//copy of array with slice but its not by refernce , its complete new array
+const team = players.slice();
+team[2]='family';
+console.log(players,team);
+//copy of array
+const team3 = [...players];
+team3[0]='female';
+const team4= Array.from(players);
+team4[1]='male';
+console.log(team,team3,team4,players);
+
+
+// for objects is not copied but its is referenced
+const person = {
+    name: 'arwa',
+    age :'42'
+}
+
+const captain = person;
+captain.number = 99;
+console.log(person);
+
+//to make copy of array without referencing it
+
+const per = Object.assign({},person,{number:99});
+console.log(per,person);
+
+
+const arwa = {
+    name: 'idris',
+    age :100,
+    social :{
+        twitter: 'tweet',
+        facebook: 'arwa-idris'
+    }
+}
+
+console.log(arwa);
+const dev = Object.assign({},arwa,{hobby:'painting'});
+console.log(dev);
+
+// another example to make a copy of array without reference
+const dev2 = JSON.parse(JSON.stringify(arwa));
+console.log(dev2);
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
