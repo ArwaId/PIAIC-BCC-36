@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <title>Follow along links</title>
+</head>
+<body>
+    <div>
+        <img src="piaic.png">
+    
+    <nav>
+        <ul class="menu">
+          <li><a href="">Artificial Intelligence</a></li>
+          <li><a href="">Coud Native Mobile Web</a></li>
+          <li><a href="">Blockchain</a></li>
+          <li><a href="">Internet of Things AI</a></li>
+          <li><a href="">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  
+      <div class="wrapper"><p>The mission of PIAIC is to reshape <a href="">Pakistan</a> by revolutionizing education, research, and business by adopting latest,
+         cutting-edge <a href="">technologies</a>technologies.</p>
+         <p> Experts are calling this the 4th industrial revolution. We want Pakistan to become a global hub for AI, data science, cloud native computing, edge computing, 
+        <a href="">blockchain</a>, augmented reality, and internet of thingsglobal hub for AI, data science, cloud native computing, edge computing, 
+        blockchain, augmented reality, and internet of things.</p>
+        <p>Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Est <a href="">explicabo</a> unde natus necessitatibus esse obcaecati 
+            distinctio, aut itaque, qui vitae!</p>
+        <p>Aspernatur sapiente quae sint <a href="">soluta</a> modi, atque praesentium laborum pariatur earum <a href="">quaerat</a> cupiditate consequuntur 
+            facilis ullam dignissimos, aperiam quam veniam.</p>
+        <p>Cum ipsam quod, incidunt sit ex <a href="">tempore</a> placeat maxime <a href="">corrupti</a> possimus <a href="">veritatis</a> ipsum fugit recusandae 
+            est doloremque? Hic, <a href="">quibusdam</a>, nulla.</p>
+        <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente 
+            dicta neque quod.</p>
+        <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni
+             impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
+      </div>
+<script>
+    const triggers = document.querySelectorAll('a');
+  
+  const creatSpan = document.createElement('span');
+  creatSpan.classList.add('highlight');
+  document.body.appendChild(creatSpan);
+
+    function highlightLink(){
+        const linkCoords = this.getBoundingClientRect();
+        console.log(linkCoords);
+        const coords = {
+            width : linkCoords.width,
+            height :linkCoords.height,
+            top : linkCoords.top + window.scrollY,
+            left : linkCoords.left + window.scrollX
+        }
+        creatSpan.style.width = `${coords.width}px `;
+        creatSpan.style.height = `${coords.height}px`;
+        creatSpan.style.transform =`translate(${coords.left}px,${coords.top}px)`;
+        console.log(creatSpan);
+       
+
+    }
+
+    triggers.forEach(a => a.addEventListener('mouseenter',highlightLink));
+    
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
