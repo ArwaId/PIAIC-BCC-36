@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Video Speed Controller</title>
+</head>
+<body>
+   <div class="wrapper">
+    <video class="flex" width="765" height="430" src="sample.mp4" loop controls></video>
+    <div class="speed">
+        <div class="speed-bar">1x</div>
+    </div>
+   </div> 
+
+   <script>
+    const speed = document.querySelector('.speed');
+    const bar = document.querySelector('.speed-bar');
+    const video = document.querySelector('.flex');
+
+    speed.addEventListener('mousemove',function(e) {
+        let x = e.pageY - this.offsetTop ;
+        let percent = x / this.offsetHeight;
+        const min = 0.4;
+        const max = 4;
+        const height = Math.round(percent *100) + '%';
+        
+        bar.style.height = height;
+        const playbackrate = percent *(max-min) + min
+        bar.textContent = playbackrate.toFixed(2)  + 'x';
+        video.playbackRate = playbackrate;
+        
+    })
+    
+    
+    </script>
+</body>
+</html>
