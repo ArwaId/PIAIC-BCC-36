@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Whack a Monster</title>
+</head>
+<body>
+    <h1>Whack a Monster! <span class="score">0</span> </h1>
+    <button type="button" onClick="startGame()">Start!</button>
+<div class="game">
+    <div class="hole hole1">
+        <div class="mole"></div>
+    </div>
+    <div class="hole hole2">
+        <div class="mole"></div>
+    </div>
+    <div class="hole hole3">
+        <div class="mole"></div>
+    </div>
+    <div class="hole hole4">
+        <div class="mole"></div>
+    </div>
+    <div class="hole hole5">
+        <div class="mole"></div>
+    </div>
+    <div class="hole hole6">
+        <div class="mole"></div>
+    </div>
+    
+</div>
+
+<script>
+    const holes = document.querySelectorAll('.hole');
+    const scoreboard = document.querySelector('.score');
+    const moles = document.querySelectorAll('.mole');
+    let lastpick;
+    let timeUp = false;
+
+    function randTime(min,max) {
+        return Math.round( Math.random() * (max-min) + min);
+    }
+
+    function randomHole(holes) {
+        
+        const idx= Math.round( Math.random() * (holes.length-1));
+        const hole = holes[idx];
+        
+        if(hole === lastpick)
+        {console.log('its a repeat');
+        return randomHole(holes);
+    }
+
+        lastpick = hole;
+        return hole;
+    }
+
+    function peep(){
+        const time = randTime(200,1000);
+        const hole = randomHole(holes);
+        console.log(hole);
+        hole.classList.add('up');
+       setTimeout(() => {
+        hole.classList.remove('up');
+        if(!timeUp) peep();
+       },time)
+     
+    }
+
+    function startGame() {
+        scoreboard.textContent = 0;
+        timeUp = false;
+        peep();
+        setTimeout(() => timeUp = true,10000)
+
+    }
+
+    function hit(e){
+        if(!e.isTrusted) return;
+        scoreboard.textContent++;
+        this.classList.remove('up');
+        
+        console.log(e);
+    }
+
+    moles.forEach(mole => mole.addEventListener('click',hit));
+   
+
+
+
+
+</script>
+
+</body>
+</html>
