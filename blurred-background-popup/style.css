@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    
+}
+
+.container{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+height: 100vh;
+justify-content: center;
+background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDg4MDd8MHwxfHNlYXJjaHw2fHxuYXR1cmV8ZW58MHx8fHwxNjY5ODc4MTA5&ixlib=rb-4.0.3&q=80&w=1080");
+background-size: cover;
+transition: filter 6s ease;
+position: relative;
+
+}
+h4{
+    color: white;
+    letter-spacing: 4px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+h1{
+    color: white;
+    letter-spacing: 4px;
+    font-size: 90px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.btn{
+    padding: 10px 20px;
+    width: 400px;
+    cursor: pointer;
+    background-color: rgb(16, 187, 121);
+    color: white;
+    border: none;
+    font-size: 40px;
+    border-radius: 10px;    
+}
+.btn:hover {
+    filter: brightness(.8);
+    color: bisque;
+}
+
+
+.popup-container {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    /* background-image: url("bg.jpg"); */
+    background-position: center;
+    background-size: cover;
+    
+    border-radius: 10px;
+    color: aqua;
+    font-size: 40px;
+    transition: filter 6s ease;
+    
+}
+@media (max-height < 700) {
+    .popup-container{
+        width: 100px;
+        height : 200;
+    }
+    
+}
+.input{
+    width: 80%;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+.input::placeholder{
+    text-align: center;
+    color: lightgrey;
+}
+.popup-btn{
+    background-color: rgb(34, 239, 171);
+    color:black;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+.popup-btn:hover{
+    filter: brightness(.7);
+}
+.close-icon{
+    top:10px;
+    right:20px;
+    position: absolute;
+    cursor: pointer;
+}
+.container.active {
+    filter: blur(5px) brightness(.7);
+}
+
+.popup-container.active{
+    visibility: hidden;
+    filter:blur(5px) brightness(.7);   
+}
